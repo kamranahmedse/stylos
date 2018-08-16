@@ -1,0 +1,33 @@
+{
+  "name": "webpack-css-utils",
+  "version": "1.0.0",
+  "description": "Webpack loader and plugin to generate and add CSS utilities to your apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kamranahmedse/webpack-css-utils"
+  },
+  "keywords": [
+    "webpack",
+    "plugin",
+    "css",
+    "css-utils",
+    "loader"
+  ],
+  "author": "Kamran Ahmed <kamranahmed.se@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kamranahmedse/webpack-css-utils/issues"
+  },
+  "homepage": "https://github.com/kamranahmedse/webpack-css-utils",
+  "dependencies": {
+    "css-tailor": "^1.0.0",
+    "loader-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.5"
+  }
+}

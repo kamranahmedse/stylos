@@ -1,2 +1,3 @@
-## css-utils-loader
-> Webpack plugin to generate and add CSS utilities
+## webpack-css-utils
+> Webpack loader and plugin to generate and add CSS utilities to your apps
+
