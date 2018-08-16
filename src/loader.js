@@ -4,7 +4,7 @@ const tailor = require('css-tailor');
 module.exports = function (source, map) {
   const options = this.options || {};
 
-  const setImportant = !!options.important;
+  const setImportant = !!options.setImportant;
   const emitFileName = 'web-utils-[hash:8].css';
 
   // Generate the CSS with given options and emit the
