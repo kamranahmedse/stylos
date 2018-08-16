@@ -2,7 +2,7 @@ const loaderUtils = require('loader-utils');
 const tailor = require('css-tailor');
 
 module.exports = function (source, map) {
-  const options = this.options || {};
+  const options = loaderUtils.getOptions(this) || {};
 
   const setImportant = !!options.setImportant;
   const emitFileName = 'web-utils-[hash:8].css';
