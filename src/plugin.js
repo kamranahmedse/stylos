@@ -1,5 +1,3 @@
-const { dd } = require('dumper.js');
-
 class CssUtilsWebpackPlugin {
   /**
    * Processes HtmlWebpackPlugin's html data
@@ -18,6 +16,7 @@ class CssUtilsWebpackPlugin {
     // the CSS from them and remove them from the
     // assets so that they don't generate CSS files
     for (let assetPath in originalAssets) {
+      /* istanbul ignore if */
       if (!originalAssets.hasOwnProperty(assetPath)) {
         continue;
       }
@@ -34,14 +33,16 @@ class CssUtilsWebpackPlugin {
     this.assets = updatedAssets;
 
     // Update the HTML by attaching the generated CSS in head
-    pluginData.head.push({
-      tagName: 'style',
-      closeTag: true,
-      attributes: {
-        type: 'text/css'
-      },
-      innerHTML: utilsCss
-    });
+    if (utilsCss) {
+      pluginData.head.push({
+        tagName: 'style',
+        closeTag: true,
+        attributes: {
+          type: 'text/css'
+        },
+        innerHTML: utilsCss
+      });
+    }
 
     return callback && callback(null, pluginData);
   }

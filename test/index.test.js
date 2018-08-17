@@ -39,6 +39,14 @@ describe('webpack-css-utils', function () {
         setImportant: false,
         htmlTemplate: path.join(__dirname, './fixtures/jsx-template.html')
       }
+    },
+    {
+      inputFile: 'jsx-3/index.jsx',
+      outputFile: 'jsx-3/index.output.html',
+      options: {
+        setImportant: false,
+        htmlTemplate: path.join(__dirname, './fixtures/jsx-template.html')
+      }
     }
   ];
 
