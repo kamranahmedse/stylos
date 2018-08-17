@@ -1,3 +1,5 @@
+const { dd } = require('dumper.js');
+
 class CssUtilsWebpackPlugin {
   /**
    * Processes HtmlWebpackPlugin's html data
