@@ -14,19 +14,31 @@
 	</a>
 </p>
 
-<p align="center">Webpack plugin to generate and inject CSS utilities to your application.</p>
+<p align="center">Webpack plugin that automatically generates and injects CSS utilities to your application.</p>
 
-## How does it work?
-All you have to do is specify utility classes on any DOM elements and webpack will generate and inject the CSS into your app. 
+Inspired by [bootstrap's utility classes](https://getbootstrap.com/docs/4.1/utilities/sizing/), stylos is a Webpack plugin that automatically generates and injects CSS utilities into your application. All you have to do is specify utility classes on DOM elements; webpack will identify and generate the properties with relevant values and inject them to your application. 
 
-For example, if you want to add bottom margin of `20px` to a link, you can do that
+For example, notice the below HTML having some utility classes i.e. `mb20`, `p15` and `fw600`  
 
 ```html
-<a href="/" class="logo mb20">I have bottom margin</a>
-<p>Here is some text having some <span class="fw600">important bold information</span> in it.</p>
-```  
+<a href="/" class="logo p15">Stylos</a>
 
-Currently supported formuals are listed below.
+<div class="jumbotron">
+  <h1 class="title mb10">Item Specific Utilities</h1>
+  <p class="fw600">Forget about accidentally disturbing some other CSS</p>
+</div>
+```
+It will result in automatic generation and injection of below CSS into your application
+
+```css
+.p15 { padding: 15px; }
+.mb10 { margin-bottom: 10px; }
+.fw600 { font-weight: 600; }
+```
+
+## Available Options
+
+There is a variety of options available. Here is the the list of known property formulas
 
 | Formula | CSS Property     | Example Usage                                    |
 |---------|------------------|--------------------------------------------------|
@@ -51,17 +63,23 @@ Currently supported formuals are listed below.
 | `b`     | `bottom`         | `b20em` will translate to `bottom: 20em;`        |
 | `r`     | `right`          | `r20em` will translate to `right: 20em;`         |
 
+As you can see the format used by the class names is sa follows
+
+```bash
+[formula][value][unit] # If you donot provide the unit, `px` will be used.
+```
+
 ## How to use?
 
 Install the plugin using npm or yarn
 
 ```bash
-npm install webpack-css-utils --save-dev
-yarn add webpack-css-utils --dev
+npm install stylos --save-dev
+yarn add stylos --dev
 ```
 Add the loader to `module.rules` in your webpack configuration
 ```javascript
-const CssUtils = require('webpack-css-utils');
+const Stylos = require('stylos');
 
 // ...
 module: {
@@ -72,7 +90,7 @@ module: {
     {
       test: /\.js$/,
       exclude: /node_modules/,
-      use: CssUtils.Loader
+      use: Stylos.Loader
     }
   ]
 },
@@ -80,7 +98,7 @@ module: {
 plugins: [
   // Add the plugin right after html-webpack-plugin
   // new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
-  new CssUtils.Plugin(),
+  new Stylos.Plugin(),
 ]
 // ...
 ```
