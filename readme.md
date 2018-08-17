@@ -19,7 +19,7 @@
 ## What is it?
 Inspired by [bootstrap's utility classes](https://getbootstrap.com/docs/4.1/utilities/sizing/), stylos is a Webpack plugin that automatically generates and injects CSS utilities into your application. All you have to do is specify utility classes on DOM elements; webpack will identify and generate the properties with relevant values and inject them to your application. 
 
-![](https://i.imgur.com/EJm8v4j.png)
+![](https://i.imgur.com/cF2pssW.png)
 
 All you have to do is specify the classes having formula key, value and then optionally the unit.
 
