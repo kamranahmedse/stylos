@@ -1,4 +1,4 @@
-class CssUtilsWebpackPlugin {
+class StylosWebpackPlugin {
   /**
    * Processes HtmlWebpackPlugin's html data
    * adding the CSS utilities to head
@@ -55,9 +55,9 @@ class CssUtilsWebpackPlugin {
    */
   apply(compiler) {
     if (compiler.hooks) {
-      compiler.hooks.compilation.tap('CssUtilsWebpackPlugin', compilation => {
+      compiler.hooks.compilation.tap('StylosWebpackPlugin', compilation => {
         compilation.hooks.htmlWebpackPluginAlterAssetTags.tapAsync(
-          'CssUtilsWebpackPlugin',
+          'StylosWebpackPlugin',
           this.processUtils.bind(compilation)
         );
       });
@@ -69,4 +69,4 @@ class CssUtilsWebpackPlugin {
   }
 }
 
-module.exports = CssUtilsWebpackPlugin;
+module.exports = StylosWebpackPlugin;

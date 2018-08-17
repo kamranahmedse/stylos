@@ -21,9 +21,13 @@ Inspired by [bootstrap's utility classes](https://getbootstrap.com/docs/4.1/util
 
 ![](https://i.imgur.com/cF2pssW.png)
 
-All you have to do is specify the classes having formula key, value and then optionally the unit.
+You might have guessed from the example above; all you have to do is specify the classes having formula key, value and then optionally the unit i.e.
 
-There is a variety of options available. Here is the the list of known property formulas
+```bash
+[formula][value][unit] # If you donot provide the unit, `px` will be used.
+```
+
+Stylos will understand it and generate the CSS for you. There is a variety of options available. Here is the the list of known property formulas that you can use in your DOM classes.
 
 | Formula | CSS Property     | Example Usage                                    |
 |---------|------------------|--------------------------------------------------|
@@ -48,11 +52,12 @@ There is a variety of options available. Here is the the list of known property 
 | `b`     | `bottom`         | `b20em` will translate to `bottom: 20em;`        |
 | `r`     | `right`          | `r20em` will translate to `right: 20em;`         |
 
-As you can see the format used by the class names is sa follows
+For the units, all the default CSS units are supported. You can specify them after the value and relevant CSS unit will be used
 
-```bash
-[formula][value][unit] # If you donot provide the unit, `px` will be used.
-```
+- Units including `px, pt, em, p, vh, vw, vmin, ex, cm, in, mm, pc` will translate to the same unit in CSS
+- If you don't provide any unit `px` will be used
+- If you need `%` specify it as `p` e.g. `w50p` will get translated to `width: 50%`
+- If no unit is needed, specify `n` e.g. `fw600n` will translate to `font-weight: 600`
 
 ## How to use?
 
@@ -87,15 +92,6 @@ plugins: [
 ]
 // ...
 ```
-
-## Notes for Units
-
-All the default CSS units are supported. You can specify it and relevant CSS unit will be used
-
-- Units including `px, pt, em, p, vh, vw, vmin, ex, cm, in, mm, pc` will translate to the same unit in CSS
-- If you don't provide any unit `px` will be used
-- If you need `%` specify it as `p` e.g. `w50p` will get translated to `width: 50%`
-- If no unit is needed, specify `n` e.g. `fw600n` will translate to `font-weight: 600`
 
 ## License
 MIT &copy; [Kamran Ahmed](http://kamranahmed.info)
