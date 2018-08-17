@@ -85,9 +85,42 @@ module.exports = {
     // ...
     // Add the rule to use the loader for HTML or JSX files
     {
-      test: /(\.js|\.jsx|\.html)$/,
+      test: /(\.js|\.jsx|\.html)$/, // Relevant regex
       exclude: /node_modules/,
-      use: Stylos.Loader
+      use: Stylos.Loader,
+    }
+  ],
+  plugins: [
+    // ...
+    // new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
+    // Add the plugin right after the HTMLWebpackPlugin
+    new Stylos.Plugin()
+  ]
+}
+```
+
+You can optionally pass `setImportant` option to loader to make the generated CSS use `!important` i.e.
+
+```javascript
+// webpack.config.js
+const Stylos = require('stylos');
+
+module.exports = {
+  // ...
+  rules: [
+    // ...
+    // Add the rule to use the loader for HTML or JSX files
+    {
+      test: /(\.js|\.jsx|\.html)$/, // Relevant regex
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: Stylos.Loader,
+          options: {
+            setImportant: true
+          }
+        }
+      ],
     }
   ],
   plugins: [
