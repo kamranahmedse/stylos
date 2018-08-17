@@ -21,7 +21,19 @@ Inspired by [bootstrap's utility classes](https://getbootstrap.com/docs/4.1/util
 
 ![](https://i.imgur.com/cF2pssW.png)
 
-As you can see, all you have to do is specify the classes having shorthand for the CSS property key, required value and optionally the unit. Stylos will understand it and generate the CSS for you. Here is the the list of known shorthand formulas that you can use in your DOM classes.
+As you can see, all you have to do is specify the classes having shorthand for the CSS property key, required value and optionally the unit. Stylos will understand it and generate the CSS for you. 
+
+## Features
+
+- Supports HTML as well as JSX
+- Works well in vanilla JavaScript apps as well as frameworks e.g. Angular, React or Vue.js
+- Plays nicely with `webpack-dev-server` / `webpack serve`
+- Integrates with [html-webpack-plugin](https://npmjs.com/package/html-webpack-plugin)
+- Helps you make those little UI changes without any accidental broken UI 
+
+## Supported Shorthands 
+
+Here is the the list of known shorthand formulas that you can use in your DOM classes.
 
 | Shorthand | CSS Property     | Example Usage                                    |
 |---------|------------------|--------------------------------------------------|
@@ -63,7 +75,6 @@ npm i -D stylos
 
 Then, import Stylos into your Webpack configuration and add it to your list of plugins:
 
-
 ```javascript
 // webpack.config.js
 const Stylos = require('stylos');
@@ -90,7 +101,11 @@ module.exports = {
 
 ## Contributions
 
-Feel free to submit pull requests, create issues or spread the word.
+- Open pull request with improvements
+- Report any bugs
+- Discuss ideas in issues
+- Spread the word
+- Reach out with any feedback [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/kamranahmedse.svg?style=social&label=Follow%20%40kamranahmedse)](https://twitter.com/kamranahmedse)
 
 ## License
 
