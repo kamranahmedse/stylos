@@ -21,15 +21,9 @@ Inspired by [bootstrap's utility classes](https://getbootstrap.com/docs/4.1/util
 
 ![](https://i.imgur.com/cF2pssW.png)
 
-You might have guessed from the example above; all you have to do is specify the classes having formula key, value and then optionally the unit i.e.
+As you can see, all you have to do is specify the classes having shorthand for the CSS property key, required value and optionally the unit. Stylos will understand it and generate the CSS for you. Here is the the list of known shorthand formulas that you can use in your DOM classes.
 
-```bash
-[formula][value][unit] # If you donot provide the unit, `px` will be used.
-```
-
-Stylos will understand it and generate the CSS for you. There is a variety of options available. Here is the the list of known property formulas that you can use in your DOM classes.
-
-| Formula | CSS Property     | Example Usage                                    |
+| Shorthand | CSS Property     | Example Usage                                    |
 |---------|------------------|--------------------------------------------------|
 | `p`     | `padding`        | `p10` will translate to `padding: 10px`          |
 | `pt`    | `padding-top`    | `pt20` will translate to `padding-top: 20px;`    |
@@ -52,46 +46,47 @@ Stylos will understand it and generate the CSS for you. There is a variety of op
 | `b`     | `bottom`         | `b20em` will translate to `bottom: 20em;`        |
 | `r`     | `right`          | `r20em` will translate to `right: 20em;`         |
 
-For the units, all the default CSS units are supported. You can specify them after the value and relevant CSS unit will be used
+For the units, you can specify them after the value and relevant CSS unit will be used
 
 - Units including `px, pt, em, p, vh, vw, vmin, ex, cm, in, mm, pc` will translate to the same unit in CSS
 - If you don't provide any unit `px` will be used
 - If you need `%` specify it as `p` e.g. `w50p` will get translated to `width: 50%`
 - If no unit is needed, specify `n` e.g. `fw600n` will translate to `font-weight: 600`
 
-## How to use?
+## Installation
 
-Install the plugin using npm or yarn
+First, install Stylos as a development dependency:
 
 ```bash
-npm install stylos --save-dev
-yarn add stylos --dev
+npm i -D stylos
 ```
-Add the loader to `module.rules` in your webpack configuration
-```javascript
-const Stylos = require('stylos');
 
-// ...
-module: {
-  // Add the loader in the loader's list
-  // it can handle HTML as well as JSX files
+Then, import Stylos into your Webpack configuration and add it to your list of plugins:
+
+
+```diff
+// webpack.config.js
++const Stylos = require('stylos');
+
+module.exports = {
   rules: [
-    // ...
-    {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: Stylos.Loader
-    }
++    {
++      test: /(\.js|\.jsx|\.html)$/,
++      exclude: /node_modules/,
++      use: Stylos.Loader
++    }
+  ],
+  plugins: [
+     // new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
++    new Stylos.Plugin()
   ]
-},
-// ...
-plugins: [
-  // Add the plugin right after html-webpack-plugin
-  // new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
-  new Stylos.Plugin(),
-]
-// ...
+}
 ```
+
+## Contributions
+
+Feel free to submit pull requests, create issues or spread the word.
 
 ## License
-MIT &copy; [Kamran Ahmed](http://kamranahmed.info)
+
+MIT &copy; [Kamran Ahmed](https://twitter.com/kamranahmedse)
