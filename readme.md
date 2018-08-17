@@ -1,5 +1,5 @@
 <h1 align="center">
-	<img height="150" src="https://cdn.rawgit.com/kamranahmedse/stylos/master/logo.svg" alt="Stylos - Generate and inject CSS utilities to your application" />
+	<img height="150" src="https://raw.githubusercontent.com/kamranahmedse/stylos/master/logo.svg" alt="Stylos - Generate and inject CSS utilities to your application" />
 	<br> Stylos
 </h1>
 <p align="center">
