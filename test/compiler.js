@@ -20,7 +20,11 @@ module.exports = function (fixturePath, options = {}) {
           use: 'html-loader'
         },
         {
-          test: /\.html/,
+          test: /\.jsx/,
+          use: 'jsx-loader'
+        },
+        {
+          test: /(\.html|\.jsx)/,
           use: {
             loader: path.resolve(__dirname, '../src/loader.js'),
             options
