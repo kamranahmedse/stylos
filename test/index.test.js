@@ -9,28 +9,28 @@ describe('webpack-css-utils', function () {
   // Data provider to test the HTML
   const htmlFixtures = [
     {
-      fileName: 'sample-1',
+      dirName: 'html-1',
       options: {}
     },
     {
-      fileName: 'sample-1',
+      dirName: 'html-1',
       options: { setImportant: false }
     },
     {
-      fileName: 'sample-2',
+      dirName: 'html-2',
       options: { setImportant: true }
     }
   ];
 
   htmlFixtures.forEach(fixture => {
-    it(`can generate CSS from the HTML files – Fixture - ${fixture.fileName}`, function (done) {
-      compiler(`${fixturesPath}/${fixture.fileName}.html`, fixture.options)
+    it(`can generate CSS from the HTML files: Fixture - ${fixture.dirName}`, function (done) {
+      compiler(`${fixturesPath}/${fixture.dirName}/index.html`, fixture.options)
         .then(output => {
           // Read the actually generated index.html from Memory FS used by compiler
           const actualHtmlPath = path.join(__dirname, './index.html');
           const actualHtmlContent = output.fs.readFileSync(actualHtmlPath, 'utf8');
           // Read the expected output fixture from fixtures directory
-          const expectedHtmlPath = `${fixturesPath}/${fixture.fileName}.output.html`;
+          const expectedHtmlPath = `${fixturesPath}/${fixture.dirName}/index.output.html`;
           const expectedHtmlContent = fs.readFileSync(expectedHtmlPath, 'utf8');
 
           assert.equal(actualHtmlContent, expectedHtmlContent);

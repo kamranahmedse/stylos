@@ -30,7 +30,7 @@ module.exports = function (fixturePath, options = {}) {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: fixturePath,
+        template: options.htmlTemplate || fixturePath,
       }),
       new UtilsPlugin()
     ]
