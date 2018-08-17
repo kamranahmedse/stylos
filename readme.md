@@ -25,7 +25,7 @@ As you can see, all you have to do is specify the classes having shorthand for t
 
 ![](https://i.imgur.com/XBDrYar.png)
 <h2 align="center">Don't use it for everything!</h2>
-<blockquote align="center">Don't overuse it. You should always <a href="https://maintainablecss.com/chapters/introduction/"> prefer to use semantic CSS class names</a></blockquote>
+<p align="center">Don't overuse it. You should always <a href="https://maintainablecss.com/chapters/introduction/"> prefer to use semantic CSS class names</a></blockquote>
 
 Stylo is not meant to be used for everything; you should [**always always** prefer semantic CSS class names](https://maintainablecss.com/chapters/introduction/). The idea behind stylo is to be used for the little UI differences that you may need here and there. For example mostly for me during prototyping or when there is no clear design specs or when reusing components, I find myself playing around with margins, paddings etc and it is tedious to modify CSS files every single time and thus for the cases like this I made this plugin to automate it.
 
