@@ -64,21 +64,24 @@ npm i -D stylos
 Then, import Stylos into your Webpack configuration and add it to your list of plugins:
 
 
-```diff
+```javascript
 // webpack.config.js
-+const Stylos = require('stylos');
+const Stylos = require('stylos');
 
 module.exports = {
+  ...
   rules: [
-+    {
-+      test: /(\.js|\.jsx|\.html)$/,
-+      exclude: /node_modules/,
-+      use: Stylos.Loader
-+    }
+    ...
+    {
+      test: /(\.js|\.jsx|\.html)$/,
+      exclude: /node_modules/,
+      use: Stylos.Loader
+    }
   ],
   plugins: [
-     // new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
-+    new Stylos.Plugin()
+    ...
+    new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
+   new Stylos.Plugin()
   ]
 }
 ```
