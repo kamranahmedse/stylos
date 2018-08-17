@@ -69,9 +69,10 @@ Then, import Stylos into your Webpack configuration and add it to your list of p
 const Stylos = require('stylos');
 
 module.exports = {
-  ...
+  // ...
   rules: [
-    ...
+    // ...
+    // Add the rule to use the loader for HTML or JSX files
     {
       test: /(\.js|\.jsx|\.html)$/,
       exclude: /node_modules/,
@@ -79,9 +80,10 @@ module.exports = {
     }
   ],
   plugins: [
-    ...
-    new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
-   new Stylos.Plugin()
+    // ...
+    // new HtmlWebpackPlugin(..),  // <-- You must have it installed and set up
+    // Add the plugin right after the HTMLWebpackPlugin
+    new Stylos.Plugin()
   ]
 }
 ```
