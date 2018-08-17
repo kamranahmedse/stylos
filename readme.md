@@ -1,10 +1,20 @@
-## webpack-css-utils
+<h1 align="center">
+	<img height="150" src="https://cdn.rawgit.com/kamranahmedse/stylos/master/logo.svg" alt="Stylos - Generate and inject CSS utilities to your application" />
+	<br> Stylos
+</h1>
+<p align="center">
+	<a href="https://travis-ci.org/kamranahmedse/stylos">
+		<img src="https://img.shields.io/travis/kamranahmedse/stylos/master.svg?style=flat-square" alt="Build Status">
+	</a>
+	<a href="https://github.com/kamranahmedse/stylos">
+		<img src="https://img.shields.io/codecov/c/github/kamranahmedse/stylos.svg?style=flat-square" alt="Codecov">
+	</a>
+	<a href="#">
+		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
+	</a>
+</p>
 
-[![Build Status](https://secure.travis-ci.org/kamranahmedse/css-tailor.svg?branch=master)](https://travis-ci.org/kamranahmedse/css-tailor)
-[![Code Coverage](https://img.shields.io/codecov/c/github/kamranahmedse/css-tailor.svg?style=flat-square)](https://travis-ci.org/kamranahmedse/css-tailor)
-![Package Version](https://badge.fury.io/js/css-tailor.svg)
-
-Webpack plugin to generate and inject CSS utilities to your application.
+<p align="center">Webpack plugin to generate and inject CSS utilities to your application.</p>
 
 ## How does it work?
 All you have to do is specify utility classes on any DOM elements and webpack will generate and inject the CSS into your app. 

@@ -1,5 +1,5 @@
 {
-  "name": "webpack-css-utils",
+  "name": "stylos",
   "version": "0.2.0",
   "description": "Webpack loader and plugin to generate and inject CSS utilities to your apps",
   "main": "index.js",
