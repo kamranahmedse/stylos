@@ -78,7 +78,7 @@ For the units, you can specify them after the value and relevant CSS unit will b
 First, install Stylos as a development dependency:
 
 ```bash
-npm i -D stylos
+yarn add --dev stylos
 ```
 
 Then, import Stylos into your Webpack configuration and add it to your list of plugins:
